@@ -10,7 +10,8 @@ const meta = document.createElement('meta')
 meta.name = 'naive-ui-style'
 document.head.appendChild(meta)
 
-
+var r = document.querySelector(':root');
+r.style.setProperty(' --n-color', 'lightblue');
 app.use(naive)
 app.use(router)
 app.mount('#app')
