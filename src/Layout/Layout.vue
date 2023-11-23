@@ -1,33 +1,41 @@
 <template>
-  <div class="layout-wrapper-container bg-app-main-bg">
-    <div class="app-toolbar flex justify-between items-center">
+  <div class="layout-wrapper-container bg-app-main-bg" :class="layout_class">
+
+    <div class="sidebar-container">
+      <Sidebar></Sidebar>
+      <div class="sidebar-control-btn" @click="control_sidebar()">
+        <n-icon>
+          <ArrowLeft16Regular></ArrowLeft16Regular>
+        </n-icon>
+      </div>
 
     </div>
     <div class="app-main">
-      <n-space>
-        <n-button>Default</n-button>
-        <n-button type="tertiary">
-          Tertiary
-        </n-button>
-        <n-button type="primary">
-          Primary
-        </n-button>
-        <n-button type="info">
-          Info
-        </n-button>
-        <n-button type="success">
-          Success
-        </n-button>
-        <n-button type="warning">
-          Warning
-        </n-button>
-        <n-button type="error">
-          Error
-        </n-button>
-      </n-space>
+          <div class="app-toolbar flex justify-between items-center">
+
+          </div>
+
     </div>
   </div>
 </template>
+
 <script setup >
+import {ref, computed} from "vue"
+import Sidebar from "@/Layout/Sidebar.vue";
+import { ArrowLeft16Regular } from '@vicons/fluent'
+
+const sidebar_enable = ref(true);
+
+const layout_class = computed(()=>{
+  return{
+    sidebar_enable:sidebar_enable.value
+  }
+})
+
+
+const control_sidebar =()=>{
+  sidebar_enable.value = !sidebar_enable.value;
+  console.log(sidebar_enable.value)
+}
 
 </script>
