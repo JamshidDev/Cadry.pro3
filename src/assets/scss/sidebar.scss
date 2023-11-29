@@ -1,78 +1,358 @@
-.sidebar-box{
+.sidebar-box {
   width: 100%;
   padding: 30px 5px;
-  &>.body-sidebar{
-    &>.single-item{
+
+  & > .body-sidebar {
+    .active-item{
+      background-color: $sidebar-text-hover-color !important;
+    }
+    .single-item {
       height: 40px;
       display: flex;
       align-items: center;
+      margin: 2px 0;
       cursor: pointer;
       background-color: transparent;
-      border-radius: 6px;
-      background-size: 0px 40px;
-      transition: all 0.2s ease;
-      margin: 2px 0px;
-      &:hover{
+      transition: $sidebar-animation;
+      border-radius: 4px;
+      position: relative;
+      &:hover {
         background-color: $sidebar-text-hover-color;
-        background-size: 260px 40px;
       }
-      &>.item-icon{
+
+      & > .item-icon {
+        width: 30px;
+        height: 30px;
+        background-color: $sidebar-text-hover-color;
+        border-radius: 4px;
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 6px;
-        background-color:$sidebar-text-hover-color;
 
-        i{
+        & > i {
+          font-size: $sidebar-icon-size;
           color: $sidebar-text-color;
         }
       }
 
-      &>.item-title{
+      & > .item-title {
+        width: 0px;
+        visibility: hidden;
+        pointer-events: none;
+        white-space: nowrap;
+        padding-left: 10px;
         color: $sidebar-text-color;
-        font-size: 12px;
-        font-weight: 400;
-        font-style: normal;
+        font-size: $sidebar-text-size;
+        transition: $sidebar-animation;
       }
+
+      &> .item-tooltip{
+        position: absolute;
+        left: 70px;
+        top: 0;
+        width: 220px;
+        padding: 10px;
+        height: 40px;
+        border-radius: 6px;
+        background: $sidebar-bg-color;
+        color: $sidebar-text-color;
+        font-size: $sidebar-text-size;
+        visibility: hidden;
+        overflow: hidden;
+        pointer-events: none;
+        &::before{
+          content: ' ';
+          width: 2px;
+          height: 40px;
+          background-color:  $sidebar-text-hover-color;
+          position: absolute;
+          top: 0px;
+          left: 4px;
+
+        }
+        &::after{
+          content: ' ';
+          width: 15px;
+          height: 2px;
+          background-color:  $sidebar-text-hover-color;
+          position: absolute;
+          top: 50%;
+          left: 4px;
+          transform: translateY(-50%);
+
+        }
+
+      }
+    }
+
+    .multiple-item {
+      width: 100%;
+      //position: absolute;
+
+      .item-header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        height: 40px;
+        background-color: transparent;
+        transition: $sidebar-animation;
+        border-radius: 4px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+
+        &:hover {
+          background-color: $sidebar-text-hover-color;
+        }
+
+        .header-icon {
+          width: 30px;
+          height: 30px;
+          background-color: $sidebar-text-hover-color;
+          border-radius: 4px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0;
+
+          & > i {
+            font-size: $sidebar-icon-size;
+            color: $sidebar-text-color;
+          }
+        }
+
+        & > .header-title {
+          width: 0px;
+          visibility: hidden;
+          pointer-events: none;
+          color: $sidebar-text-color;
+          font-size: $sidebar-text-size;
+          transition: $sidebar-animation;
+          white-space: nowrap;
+          padding-left: 10px;
+        }
+
+        & > .header-arrow-icon {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          top: 8px;
+          right: -100px;
+          background-color: transparent;
+          transition: $sidebar-animation;
+
+          & > i {
+            font-size: $sidebar-icon-size;
+            color: $sidebar-text-color;
+          }
+        }
+      }
+
+      .item-body{
+        //box-shadow: 0 20px 10px -20px rgba(0,0,0,0.45) inset, 0 -20px 10px -20px rgba(0,0,0,0.45) inset;
+        overflow: hidden;
+
+        transition: $sidebar-animation;
+        &> .sub-item{
+          width: 100%;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          padding-left: 20px;
+          cursor: pointer;
+          background-color: transparent;
+          border-radius: 4px;
+          transition: $sidebar-animation;
+          position: relative;
+          margin-top: 2px;
+          &::before{
+            content: ' ';
+            width: 2px;
+            height: 40px;
+            background-color:  $sidebar-text-hover-color;
+            position: absolute;
+            top: 0px;
+            left: 4px;
+
+          }
+          &::after{
+            content: ' ';
+            width: 15px;
+            height: 2px;
+            background-color:  $sidebar-text-hover-color;
+            position: absolute;
+            top: 50%;
+            left: 4px;
+            transform: translateY(-50%);
+
+          }
+          &:hover {
+            background-color: $sidebar-text-hover-color;
+          }
+          &> .sub-item-icon{
+            width: 30px;
+            height: 30px;
+            border-radius: 4px;
+            color: $sidebar-text-color;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            & > i {
+              font-size: $sidebar-icon-size;
+              color: $sidebar-text-color;
+            }
+          }
+          &> .sub-item-title{
+            width: calc(100% - 30px);
+            //visibility: hidden;
+            //pointer-events: none;
+            white-space: nowrap;
+            padding-left: 10px;
+            color: $sidebar-text-color;
+            font-size: $sidebar-text-size;
+            transition: $sidebar-animation;
+          }
+
+        }
+      }
+
+
     }
 
   }
 }
 
 .sidebar_enable {
-  .single-item{
-    width: calc($sidebar-max-width - 10px);
-    .item-title{
-      visibility: visible;
-      width: calc($sidebar-max-width - 40px);
-      pointer-events: all;
+  .sidebar-box{
+    & > .body-sidebar {
+      .single-item {
+        & > .item-title {
+          width: calc(100% - 30px) !important;
+          visibility: visible !important;
+          pointer-events: all;
+        }
+        & > .item-icon{
+          margin: 0;
+        }
+      }
 
-    }
-    .item-icon{
-      margin: 0px 5px;
+      &> .multiple-item {
 
+        & > .item-header {
+          .header-title {
+            width: calc(100% - 30px);
+            visibility: visible ;
+            pointer-events: all;
+          }
+
+          & > .header-arrow-icon {
+            right: 4px;
+          }
+        }
+
+      }
     }
   }
-
 }
-.single-item{
-  width: calc($sidebar-min-width - 10px);
-  transition: all 0.25s ease-in-out;
-  .item-title{
-    overflow: hidden;
-    visibility: hidden;
-    white-space: nowrap;
-    width: 0px ;
-    transition: all 0.25s ease-in-out;
-    pointer-events: none;
-    padding-left: 0px;
-  }
-  .item-icon{
-    width: 30px;
-    min-width: 30px;
-    height: 30px;
-    margin: 0px 10px;
-    transition: all 0.3s ease-in-out;
+.sidebar_unable{
+  .sidebar-box{
+    & > .body-sidebar {
+      &>  .single-item{
+        &> .item-title{
+          padding-left: 0px;
+        }
+        & > .item-icon{
+          margin: 0px 10px;
+        }
+        &:hover{
+          &> .item-tooltip{
+            position: absolute;
+            left: 70px;
+            top: 0;
+            width: 220px;
+            height: 40px;
+            padding: 10px;
+            border-radius: 6px;
+            background: $sidebar-bg-color;
+            z-index: 20;
+            visibility: visible;
+            overflow: visible;
+            pointer-events: all;
 
+            &::before{
+              content: '>';
+              width: 30px;
+              height: 40px;
+              background: $sidebar-bg-color;
+              color: $sidebar-text-color;
+              position: absolute;
+              top: 0;
+              left: -20px;
+              z-index: 19;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+
+            }
+          }
+        }
+      }
+      &> .multiple-item {
+        position: relative;
+        & > .item-header {
+          .header-title {
+            padding-left: 0px;
+          }
+          & > .header-icon {
+            margin: 0px 10px;
+          }
+        }
+        &> .item-body{
+         height: 0 !important;
+          visibility: hidden;
+          transition: visibility;
+        }
+        &:hover {
+          &> .item-body{
+            position: absolute;
+            left: 70px;
+            top: 0;
+            width: 220px;
+            padding: 10px;
+            border-radius: 6px;
+            background: $sidebar-bg-color;
+            z-index: 20;
+            height: auto !important;
+            visibility: visible;
+            overflow: visible;
+
+
+            &::before{
+              content: '>';
+              width: 30px;
+              height: 40px;
+              background: $sidebar-bg-color;
+              color: $sidebar-text-color;
+              position: absolute;
+              top: 0;
+              left: -20px;
+              z-index: 19;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+
+            }
+
+          }
+        }
+
+      }
+    }
   }
 }

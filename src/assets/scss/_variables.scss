@@ -4,8 +4,14 @@
 $app-toolbar-bg-color: #ffffff;
 $app-bg-color: #eef1fa;
 
-$sidebar-bg-color: linear-gradient(45deg, #040849 0%, #0d1059 100%);
+$sidebar-bg-color: linear-gradient(45deg, #21262d 0%, #1d273f 100%);
 $sidebar-max-width:240px;
 $sidebar-min-width:60px;
 $sidebar-text-color:#ffffff;
-$sidebar-text-hover-color:#f8fbff38;
+$sidebar-text-hover-color: rgba(248, 251, 255, 0.08);
+$sidebar-icon-size:20px;
+$sidebar-arrow-icon-size:18px;
+$sidebar-text-size:12px;
+$sidebar-animation:all 0.225s ease-in-out;
+
+$mobile_device_screen_size:920px;
