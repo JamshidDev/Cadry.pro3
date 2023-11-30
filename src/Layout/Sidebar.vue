@@ -1,6 +1,6 @@
 <template>
   <div class="sidebar-box">
-    <div class="header-sidebar">
+    <div class="header-sidebar h-[60px]">
 
     </div>
     <div class="body-sidebar">
