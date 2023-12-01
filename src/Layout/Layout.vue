@@ -16,11 +16,12 @@
 <!--                <AppsList20Regular></AppsList20Regular>-->
 <!--              </n-icon>-->
 <!--            </div>-->
-            <AppBar @sidebar-event="control_sidebar()"></AppBar>
+            <AppBar @sidebar-event="control_sidebar()" @user-bar-event="handleConfig()"></AppBar>
           </div>
     </div>
     <div class="sidebar-overall-bg" @click="control_sidebar()">
     </div>
+    <AppConfig ref="app_config_ref"></AppConfig>
   </div>
 </template>
 
@@ -28,9 +29,11 @@
 import {ref, computed} from "vue"
 import Sidebar from "@/Layout/Sidebar.vue";
 import AppBar from "@/Layout/AppBar.vue";
+import AppConfig from "@/Layout/AppConfig.vue";
 import { AppsList20Regular, ChevronLeft12Regular } from '@vicons/fluent'
 
 const sidebar_enable = ref(true);
+const app_config_ref = ref(null);
 
 const layout_class = computed(()=>{
   return{
@@ -42,6 +45,10 @@ const layout_class = computed(()=>{
 
 const control_sidebar =()=>{
   sidebar_enable.value = !sidebar_enable.value;
+}
+
+const handleConfig = ()=>{
+app_config_ref.value.handleActiveBar(true)
 }
 
 </script>

@@ -1,0 +1,31 @@
+
+.primary-text{
+  color: $primary-color;
+}
+.default-text {
+  color: $default-text-color;
+}
+.primary-border-color {
+  border-color:$border-color;
+}
+.general-transition {
+  transition: all 0.25s ease-in-out;
+}
+
+.responsive-text {
+  display: inline-block !important;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}
+
+.card-container{
+  background-color: $card-bg-color;
+}
+.hover-card{
+  &:hover{
+    background-color: $card-hover-bg-color;
+  }
+
+}
+

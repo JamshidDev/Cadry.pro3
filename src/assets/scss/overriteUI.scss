@@ -1,0 +1,34 @@
+
+
+//tab
+.n-tabs-rail{
+  background-color: transparent !important;
+  .n-tabs-tab{
+    color: $default-text-color !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+  }
+   .n-tabs-tab--active{
+    color: $white-color !important;
+     background-image: $primary-bg-color !important;
+     font-size: 12px !important;
+     font-weight: 500 !important;
+  }
+}
+
+
+.n-popover-shared{
+    border-radius: 8px !important;
+
+  .option-body__label{
+    color: $default-text-color !important;
+  }
+  .n-dropdown-option-body__prefix--show-icon{
+    color: $default-text-color !important;
+  }
+
+  .n-dropdown-divider{
+    color: $default-text-color !important;
+  }
+
+}

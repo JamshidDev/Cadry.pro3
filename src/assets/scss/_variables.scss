@@ -18,8 +18,34 @@ $sidebar-animation:all 0.225s ease-in-out;
 $mobile_device_screen_size:920px;
 
 
+$overall-bg-color:#0009;
+
 //app bar
 
 $app-text-color:rgb(249, 250, 251);
 $app-bg-color:rgb(249, 250, 251);
 $btn-border-color:rgb(243, 244, 246);
+
+
+//color list
+
+$primary-color:#7367f0;
+$primary-bg-color:linear-gradient(72.47deg, rgb(115, 103, 240) 22.16%, rgba(115, 103, 240, 0.7) 76.47%);
+
+$white-color: #ffffff;
+$info-color:#0084ff;
+$danger-color:#ff0000;
+$success-color:#25d366;
+$warning-color:#ff9900;
+
+//text
+$default-text-color: #334155FF;
+
+
+
+//border
+$border-color:#ededf5;
+
+//card
+$card-bg-color:#f9fafb;
+$card-hover-bg-color: rgba(200, 220, 255, 0.38);

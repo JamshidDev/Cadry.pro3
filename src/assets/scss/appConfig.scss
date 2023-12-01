@@ -1,0 +1,40 @@
+$app-bar-width:360px;
+
+.app-config-container{
+
+  &>.user-chat-bar{
+    width: $app-bar-width;
+    height: calc(100vh - 0px);
+    position: fixed;
+    top: 0px;
+    right: - calc($app-bar-width + 50px);
+    z-index: 12;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    .user-bar-header{
+      background-image: $primary-bg-color;
+    }
+  }
+  .user-chat-bar-overral-bg{
+    width: 0;
+    height: 100vh;
+    z-index: 11;
+    background-color: $overall-bg-color;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    top: 0px;
+    opacity: 0;
+  }
+}
+
+.active-user-bar{
+  &>.user-chat-bar{
+    right: 0px;
+  }
+  .user-chat-bar-overral-bg{
+    width: 100%;
+    opacity: 1;
+  }
+
+}

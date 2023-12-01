@@ -89,7 +89,7 @@
     height: 100%;
     width: 0;
     border-radius: 100%;
-    background-color: #0f111459;
+    background-color: $overall-bg-color;
     transition: all 0.3s ease-in-out;
   }
 
@@ -100,7 +100,7 @@
     border-radius: 15px;
     position: absolute;
     top: 15px;
-    z-index: 30;
+    z-index: 11;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -179,7 +179,6 @@
       width: $sidebar-min-width;
       min-height: 100vh;
       height: 100%;
-      z-index: 20;
       border-bottom-right-radius: 13px;
       .sidebar-control-btn{
         &>i{

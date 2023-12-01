@@ -1,10 +1,17 @@
 <template>
-  <div class="w-full flex justify-between min-h-full px-[20px] relative overflow-hidden" @click="active_search = true">
+  <div class="w-full flex justify-between min-h-full px-[20px] relative overflow-hidden">
     <div class="flex items-center">
 <!--     <div class="organization-name min-h-full flex flex-col">-->
 <!--       <h4 class="text-[16px] pt-[6px] gradient-text-logo">O'zbekiton Temir yo'llari Aksiyadorlik jamiyati</h4>-->
 <!--       <h4 class="text-[12px] pt-[2px]">31234234234432</h4>-->
 <!--     </div>-->
+
+      <div class="flex items-center gap-[10px] px-[10px]" @click="handleSearch()">
+        <n-icon class="text-[20px] font-semibol primary-text">
+          <Search28Regular></Search28Regular>
+        </n-icon>
+        <span class="text-[12px] default-text">Qidiruv (Ctrl + /)</span>
+      </div>
     </div>
     <div class="flex gap-4 justify-end min-h-full items-center">
 
@@ -22,8 +29,7 @@
         <CommentNote20Regular></CommentNote20Regular>
       </n-icon>
     </button>
-
-      <button class="w-[34px] h-[34px] flex justify-center items-center app-btn rounded-full">
+      <button class="w-[34px] h-[34px] flex justify-center items-center app-btn rounded-full" @click="$emit('userBarEvent')">
         <n-icon class="text-[20px] font-medium ">
           <AppsListDetail20Regular></AppsListDetail20Regular>
         </n-icon>
@@ -63,12 +69,12 @@
      z-10 rounded-[30px] flex justify-between items-center cursor-pointer"
          :class="[active_search ? 'left-0 visible opacity-100 rounded-[30px]' : 'left-[100px] invisible opacity-0 rounded-[0px]']">
      <div class="flex items-center">
-       <n-icon class="text-[20px] font-semibol">
+       <n-icon class="text-[20px] font-semibol primary-text">
          <Search28Regular></Search28Regular>
        </n-icon>
-       <input v-model="search_text" class=" min-w-[200px] text-[12px] font-medium  ml-3 min-h-full focus:outline-0" placeholder="Qidiruv (Ctl + /)">
+       <input v-model="search_text" ref="search_app_ref" class="default-text min-w-[200px] text-[12px] font-medium  ml-3 min-h-full focus:outline-0" placeholder="Qidiruv (Ctl + /)">
      </div>
-      <n-icon class="text-[30px]  top-1/2  right-0 text-green" @click.stop="active_search=false">
+      <n-icon class="text-[30px]  top-1/2  right-0 text-green primary-text" @click.stop="active_search=false">
         <ArrowSyncDismiss24Regular></ArrowSyncDismiss24Regular>
       </n-icon>
     </div>
@@ -90,7 +96,7 @@ import {
   Search28Regular,
   ArrowSyncDismiss24Regular
 } from "@vicons/fluent";
-const emits = defineEmits(["sidebarEvent"])
+const emits = defineEmits(["sidebarEvent", 'userBarEvent'])
 
 const active = ref(true);
 const renderIcon = (icon) => {
@@ -103,6 +109,8 @@ const renderIcon = (icon) => {
 
 const active_search = ref(false)
 const search_text = ref(null)
+const search_app_ref = ref(null)
+
 
 const options = [{
   label: 'Xabarlar',
@@ -133,5 +141,13 @@ const handleSelect = (event) => {
   console.log(event)
 }
 
+const handleSearch = (event) => {
+  active_search.value=true;
+  setTimeout(()=>{
+    search_app_ref.value.focus();
+  },500)
+
+
+}
 
 </script>

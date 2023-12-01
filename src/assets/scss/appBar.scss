@@ -1,14 +1,11 @@
 
 
-.gradient-text-logo {
-  background-image: linear-gradient(to right, #0b083a, #020226);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 
 .app-btn{
   background-color: $app-bg-color;
   border: 1px solid $btn-border-color;
+  color: $primary-color;
+  font-weight: 600;
 }
 
 .transition-app{
