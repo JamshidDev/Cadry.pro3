@@ -5,6 +5,7 @@ import {
 
 import Layout from "@/Layout/Layout.vue";
 import LoginPage from "@/Layout/LoginPage.vue";
+import TemplatePage from "@/pages/TemplatePage/TemplatePage.vue"
 
 const checkToken = () => {
     const token_date = localStorage.getItem("token_created_date");
@@ -46,15 +47,13 @@ const routes = [
         name: "layout-v1",
         // beforeEnter: authLogin,
         component:Layout,
-        // children: [
-        //     {
-        //         path: "/admin",
-        //         name: "homepage",
-        //         component: function () {
-        //             return import("../views/HomePage.vue");
-        //         },
-        //     },
-        // ],
+        children: [
+            {
+                path: "/template-page",
+                name: "template-page",
+                component: TemplatePage,
+            },
+        ],
     },
 
 

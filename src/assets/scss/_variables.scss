@@ -1,10 +1,21 @@
+:root{
+    --ap-bg-color:#f1f5f9;
 
 
+    --card-bg-color:#ffffff;
+  --hover-card-bg-color:#f1f5f9;
 
-$app-toolbar-bg-color: #ffffff;
-$app-bg-color: #eef1fa;
+    --border-color: #E2E8F0FF;
 
-$sidebar-bg-color: linear-gradient(45deg, #21262d 0%, #1d273f 100%);
+  --text-dark:#0f1018;
+  --text-grey:#7d828f;
+
+}
+
+$app-toolbar-bg-color: var(--card-bg-color);
+$app-bg-color: var(--ap-bg-color);
+
+$sidebar-bg-color: linear-gradient(45deg, #1e293b 23%, #1e293b 100%);
 $sidebar-max-width:240px;
 $sidebar-min-width:60px;
 $sidebar-text-color:#ffffff;
@@ -23,13 +34,12 @@ $overall-bg-color:#0009;
 //app bar
 
 $app-text-color:rgb(249, 250, 251);
-$app-bg-color:rgb(249, 250, 251);
 $btn-border-color:rgb(243, 244, 246);
 
 
 //color list
 
-$primary-color:#7367f0;
+$primary-color:#7367F0B2;
 $primary-bg-color:linear-gradient(72.47deg, rgb(115, 103, 240) 22.16%, rgba(115, 103, 240, 0.7) 76.47%);
 
 $white-color: #ffffff;
@@ -39,13 +49,17 @@ $success-color:#25d366;
 $warning-color:#ff9900;
 
 //text
-$default-text-color: #334155FF;
+$text-dark-color: var(--text-dark);
+$text-gray-color: var(--text-grey);
 
 
 
 //border
-$border-color:#ededf5;
+$border-color: var(--border-color);
 
 //card
-$card-bg-color:#f9fafb;
-$card-hover-bg-color: rgba(200, 220, 255, 0.38);
+$card-bg-color:var(--card-bg-color);
+$card-hover-bg-color: var(--hover-card-bg-color);
+
+
+$min-height-page-content:1100px;

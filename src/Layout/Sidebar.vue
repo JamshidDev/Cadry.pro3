@@ -365,6 +365,61 @@ const sidebar_menu_list = [
     visible: true,
     is_New: false,
   },
+  {
+    index: '16',
+    title: "Single Item 6",
+    icon: 'pi pi-plus',
+    to: 'admin-path',
+    visible: true,
+    is_New: false,
+  },
+  {
+    index: '17',
+    title: "Single Item 6",
+    icon: 'pi pi-plus',
+    to: 'admin-path',
+    visible: true,
+    is_New: false,
+  }, {
+    index: '18',
+    title: "Single Item 6",
+    icon: 'pi pi-plus',
+    to: 'admin-path',
+    visible: true,
+    is_New: false,
+  },
+  {
+    index: '19',
+    title: "Single Item 6",
+    icon: 'pi pi-plus',
+    to: 'admin-path',
+    visible: true,
+    is_New: false,
+  },
+  {
+    index: '20',
+    title: "Single Item 6",
+    icon: 'pi pi-plus',
+    to: 'admin-path',
+    visible: true,
+    is_New: false,
+  }, {
+    index: '21',
+    title: "Single Item 6",
+    icon: 'pi pi-plus',
+    to: 'admin-path',
+    visible: true,
+    is_New: false,
+  },
+  {
+    index: '22',
+    title: "Single Item 6",
+    icon: 'pi pi-plus',
+    to: 'admin-path',
+    visible: true,
+    is_New: false,
+  },
+
 
 
 ]

@@ -10,7 +10,7 @@
         <n-icon class="text-[20px] font-semibol primary-text">
           <Search28Regular></Search28Regular>
         </n-icon>
-        <span class="text-[12px] default-text">Qidiruv (Ctrl + /)</span>
+        <span class="text-[12px] text-grey-color">Qidiruv (Ctrl + /)</span>
       </div>
     </div>
     <div class="flex gap-4 justify-end min-h-full items-center">
@@ -36,7 +36,8 @@
       </button>
       <n-avatar
           round
-          class="cursor-pointer"
+
+          class="cursor-pointer primary-border-color"
           size="small"
           src="https://edu.uz/temp/langs/uz.png"
           fallback-src="https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg"
@@ -65,14 +66,14 @@
     </div>
 
 <!--    search bar-->
-    <div class="w-full min-h-full transition-app absolute top-0 visible p-2
+    <div class="w-full min-h-full card-container transition-app absolute top-0 visible p-2
      z-10 rounded-[30px] flex justify-between items-center cursor-pointer"
          :class="[active_search ? 'left-0 visible opacity-100 rounded-[30px]' : 'left-[100px] invisible opacity-0 rounded-[0px]']">
      <div class="flex items-center">
        <n-icon class="text-[20px] font-semibol primary-text">
          <Search28Regular></Search28Regular>
        </n-icon>
-       <input v-model="search_text" ref="search_app_ref" class="default-text min-w-[200px] text-[12px] font-medium  ml-3 min-h-full focus:outline-0" placeholder="Qidiruv (Ctl + /)">
+       <input v-model="search_text" ref="search_app_ref" class="card-container default-text min-w-[200px] text-[12px] font-medium  ml-3 min-h-full focus:outline-0" placeholder="Qidiruv (Ctl + /)">
      </div>
       <n-icon class="text-[30px]  top-1/2  right-0 text-green primary-text" @click.stop="active_search=false">
         <ArrowSyncDismiss24Regular></ArrowSyncDismiss24Regular>

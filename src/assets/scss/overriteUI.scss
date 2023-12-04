@@ -1,34 +1,95 @@
-
-
 //tab
-.n-tabs-rail{
-  background-color: transparent !important;
-  .n-tabs-tab{
-    color: $default-text-color !important;
+.n-tabs-rail {
+  background-color: $app-bg-color !important;
+
+  .n-tabs-tab {
+    color: $text-dark-color !important;
     font-size: 12px !important;
     font-weight: 500 !important;
+    background-color: $card-bg-color !important;
+    margin: 0px 2px;
   }
-   .n-tabs-tab--active{
+
+  .n-tabs-tab--active {
     color: $white-color !important;
-     background-image: $primary-bg-color !important;
-     font-size: 12px !important;
-     font-weight: 500 !important;
+    background-image: $primary-bg-color !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
   }
 }
 
 
-.n-popover-shared{
-    border-radius: 8px !important;
+.n-popover-shared {
+  border-radius: 8px !important;
+  background-color: $card-bg-color !important;
 
-  .option-body__label{
-    color: $default-text-color !important;
+  .n-dropdown-option-body {
+    &:hover {
+      background-color: $card-hover-bg-color !important;
+    }
+    &::before {
+      background-color: transparent !important;
+    }
   }
-  .n-dropdown-option-body__prefix--show-icon{
-    color: $default-text-color !important;
+  .n-dropdown-option-body__label {
+    color: $text-dark-color !important;
   }
 
-  .n-dropdown-divider{
-    color: $default-text-color !important;
+  .n-dropdown-option-body__prefix--show-icon {
+    color: $text-dark-color !important;
   }
 
+  .n-dropdown-divider {
+    color: $border-color !important;
+    background-color: $border-color !important;
+  }
+}
+
+.n-table{
+  background-color: $card-bg-color !important;
+  border-radius: 12px !important;
+  border: 1px solid $border-color !important;
+  overflow: hidden !important;
+  th{
+    background-color: $app-bg-color !important;
+    border-bottom: 1px solid $border-color !important;
+    border-right: 1px solid $border-color !important;
+    color: $text-dark-color !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+  }
+
+  td {
+    background-color: transparent !important;
+    border-bottom: 1px solid $border-color !important;
+    border-right: 1px solid $border-color !important;
+    color: $text-gray-color !important;
+    font-size: 14px !important;
+  }
+  th:last-child{
+    border-right: none !important;
+  }
+  td:last-child{
+    border-right: none !important;
+  }
+  tr{
+    background-color: transparent !important;
+    &:hover{
+      background-color: $card-hover-bg-color !important;
+      cursor: pointer;
+    }
+  }
+
+  tr:last-child{
+    td{
+      border-bottom: none !important;
+    }
+
+  }
+
+
+}
+
+.n-switch.n-switch--active .n-switch__rail{
+  background-color: $primary-color !important;
 }

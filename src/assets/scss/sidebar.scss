@@ -50,7 +50,7 @@
         position: absolute;
         left: 70px;
         top: 0;
-        width: 220px;
+        width: 0;
         padding: 10px;
         height: 40px;
         border-radius: 6px;
@@ -266,7 +266,7 @@
           padding-left: 0px;
         }
         & > .item-icon{
-          margin: 0px 10px;
+          margin: 0 10px;
         }
         &:hover{
           &> .item-tooltip{
@@ -282,6 +282,8 @@
             visibility: visible;
             overflow: visible;
             pointer-events: all;
+            border: 1px solid #F1F5F91E;
+            border-left: none;
 
             &::before{
               content: '>';
@@ -290,13 +292,15 @@
               background: $sidebar-bg-color;
               color: $sidebar-text-color;
               position: absolute;
-              top: 0;
-              left: -20px;
+              top: -1px;
+              left: -22px;
               z-index: 19;
               display: flex;
               align-items: center;
               justify-content: center;
               cursor: pointer;
+              border: 1px solid #F1F5F91E;
+              border-right: none;
 
             }
           }
@@ -325,27 +329,32 @@
             width: 220px;
             padding: 10px;
             border-radius: 6px;
+            border-top-left-radius: 0px;
             background: $sidebar-bg-color;
             z-index: 20;
             height: auto !important;
             visibility: visible;
             overflow: visible;
+            border: 1px solid #F1F5F91E;
 
 
             &::before{
               content: '>';
-              width: 30px;
+              width: 22px;
               height: 40px;
               background: $sidebar-bg-color;
               color: $sidebar-text-color;
               position: absolute;
-              top: 0;
-              left: -20px;
+              top: -1px;
+              left: -22px;
               z-index: 19;
               display: flex;
               align-items: center;
               justify-content: center;
               cursor: pointer;
+              border: 1px solid #F1F5F91E;
+              border-right: none;
+
 
             }
 

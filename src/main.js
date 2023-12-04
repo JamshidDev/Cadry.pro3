@@ -14,4 +14,5 @@ var r = document.querySelector(':root');
 r.style.setProperty(' --n-color', 'lightblue');
 app.use(naive)
 app.use(router)
+
 app.mount('#app')
