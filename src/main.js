@@ -10,9 +10,13 @@ const meta = document.createElement('meta')
 meta.name = 'naive-ui-style'
 document.head.appendChild(meta)
 
-var r = document.querySelector(':root');
-r.style.setProperty(' --n-color', 'lightblue');
+// custom components
+import TablePagination from "@/components/TablePagination.vue";
+
+
 app.use(naive)
 app.use(router)
+
+app.component('Table-Pagination', TablePagination)
 
 app.mount('#app')

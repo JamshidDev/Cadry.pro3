@@ -20,8 +20,8 @@
       </div>
 
     </div>
-    <div class="flex justify-between gap-4 items-center px-2 theme_controller-btn fixed bottom-[20px] right-[10px] w-[200px] h-[46px] primary-border-color border-[1px] rounded-2xl cursor-pointer">
-      <n-switch v-model:value="theme_dark" size="large" @change="change_theme()">
+    <div class=" flex justify-between gap-4 items-center px-2 theme_controller-btn fixed bottom-[20px] right-[10px] w-[200px] h-[46px] primary-border-color border-[1px] rounded-2xl cursor-pointer">
+      <n-switch v-model:value="theme_dark" size="large" @update:value="change_theme()">
         <template #checked-icon>
           <n-icon class="primary-text"  :component="WeatherMoon20Filled" />
         </template>

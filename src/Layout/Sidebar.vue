@@ -6,7 +6,7 @@
     <div class="body-sidebar">
       <template v-for="item in sidebar_menu_list">
 
-        <div v-if="item?.items" class="multiple-item">
+        <div v-if="item.items" class="multiple-item">
           <div class="item-header" @click="select_panel(item.index)">
             <div class="header-icon">
               <n-icon>

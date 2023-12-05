@@ -6,7 +6,7 @@
 <!--       <h4 class="text-[12px] pt-[2px]">31234234234432</h4>-->
 <!--     </div>-->
 
-      <div class="flex items-center gap-[10px] px-[10px]" @click="handleSearch()">
+      <div class=" mobile-none flex items-center gap-[10px] px-[10px]" @click="handleSearch()">
         <n-icon class="text-[20px] font-semibol primary-text">
           <Search28Regular></Search28Regular>
         </n-icon>
@@ -15,16 +15,16 @@
     </div>
     <div class="flex gap-4 justify-end min-h-full items-center">
 
-      <button class="w-[34px] h-[34px] flex justify-center items-center app-btn rounded-full">
+      <button class="mobile-none w-[34px] h-[34px] flex justify-center items-center app-btn rounded-full">
         <n-icon class="text-[20px] font-medium ">
           <Search32Regular></Search32Regular>
         </n-icon>
       </button>
-      <button class="w-[34px] h-[34px] flex justify-center items-center app-btn rounded-full">
+      <button class="mobile-none w-[34px] h-[34px] flex justify-center items-center app-btn rounded-full">
         <n-icon class="text-[20px] font-medium ">
           <FullScreenMaximize16Regular></FullScreenMaximize16Regular>
         </n-icon>
-      </button><button class="w-[34px] h-[34px] flex justify-center items-center app-btn rounded-full">
+      </button><button class="mobile-none w-[34px] h-[34px] flex justify-center items-center app-btn rounded-full">
       <n-icon class="text-[20px] font-medium ">
         <CommentNote20Regular></CommentNote20Regular>
       </n-icon>
