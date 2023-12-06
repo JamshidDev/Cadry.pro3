@@ -1,14 +1,18 @@
 :root{
-    --ap-bg-color:#f1f5f9;
-
-
-    --card-bg-color:#ffffff;
+  --ap-bg-color:#f1f5f9;
+  --card-bg-color:#ffffff;
   --hover-card-bg-color:#f1f5f9;
-
-    --border-color: #E2E8F0FF;
+  --border-color: #E2E8F0FF;
 
   --text-dark:#0f1018;
   --text-grey:#7d828f;
+
+  --primary-color:#805dca;
+  --white-color:#ffffff;
+  --info-color:#2196f3;
+  --danger-color:#ff0000;
+  --success-color:#25d366;
+  --warning-color:#ff9900;
 }
 
 $app-toolbar-bg-color: var(--card-bg-color);
@@ -38,14 +42,14 @@ $btn-border-color:rgb(243, 244, 246);
 
 //color list
 
-$primary-color:#805dca;
+$primary-color:var(--primary-color);
 $primary-bg-color:linear-gradient(72.47deg, rgb(115, 103, 240) 22.16%, rgba(115, 103, 240, 0.7) 76.47%);
 
-$white-color: #ffffff;
-$info-color:#2196f3;
-$danger-color:#ff0000;
-$success-color:#25d366;
-$warning-color:#ff9900;
+$white-color: var(--white-color);
+$info-color:var(--info-color);
+$danger-color:var(--danger-color);
+$success-color:var(--success-color);
+$warning-color:var(--warning-color);
 
 //text
 $text-dark-color: var(--text-dark);

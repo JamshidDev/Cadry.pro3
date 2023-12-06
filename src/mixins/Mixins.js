@@ -1,6 +1,5 @@
 
-import {ref} from "vue";
-const count_ref = ref(0);
+const rootElement = getComputedStyle(document.documentElement)
 const theme_details = {
     light:{
         app_bg_color:'#f1f5f9',
@@ -20,6 +19,7 @@ const theme_details = {
     }
 
 }
+
 export  const Mixins = {
     change_theme(item){
          if(item) {
@@ -42,5 +42,20 @@ export  const Mixins = {
 
     },
 
+    Color_list : {
+        primary_color: rootElement.getPropertyValue('--primary-color'),
+        white_color: rootElement.getPropertyValue('--white-color'),
+        info_color: rootElement.getPropertyValue('--info-color'),
+        danger_color: rootElement.getPropertyValue('--danger-color'),
+        success_color: rootElement.getPropertyValue('--success-color'),
+        warning_color: rootElement.getPropertyValue('--warning-color'),
+        card_bg_color: rootElement.getPropertyValue('--card-bg-color'),
+    },
 
 }
+document.documentElement.style.setProperty('--ap-bg-color', theme_details['dark'].app_bg_color);
+document.documentElement.style.setProperty('--card-bg-color', theme_details['dark'].card_bg_color);
+document.documentElement.style.setProperty('--hover-card-bg-color', theme_details['dark'].hover_card_bg_color);
+document.documentElement.style.setProperty('--border-color', theme_details['dark'].border_color);
+document.documentElement.style.setProperty('--text-dark', theme_details['dark'].text_dark);
+document.documentElement.style.setProperty('--text-grey', theme_details['dark'].text_gray);

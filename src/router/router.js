@@ -6,6 +6,7 @@ import {
 import Layout from "@/Layout/Layout.vue";
 import LoginPage from "@/Layout/LoginPage.vue";
 import TemplatePage from "@/pages/TemplatePage/TemplatePage.vue"
+import GraphicDashboard from "@/pages/GeneralPage.vue/GraphicDashboard.vue";
 
 const checkToken = () => {
     const token_date = localStorage.getItem("token_created_date");
@@ -46,12 +47,17 @@ const routes = [
         path: "/",
         name: "layout-v1",
         // beforeEnter: authLogin,
-        component:Layout,
+        component: Layout,
         children: [
             {
                 path: "/template-page",
                 name: "template-page",
                 component: TemplatePage,
+            },
+            {
+                path: "/graphic-dashboard",
+                name: "graphic-dashboard",
+                component: GraphicDashboard,
             },
         ],
     },
