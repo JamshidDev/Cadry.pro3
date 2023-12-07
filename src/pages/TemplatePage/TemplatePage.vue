@@ -3,6 +3,9 @@
     <div class=" w-full " style="border-radius: 12px">
       <div class="grid grid-cols-1">
         <div class="grid xl:grid-cols-7 lg:grid-cols-7 md:grid-cols-5 sm:grid-cols-3 grid-cols-1 gap-4 mb-6 mt-4">
+          <div>
+            <p>{{ $t('title') }}</p>
+          </div>
           <n-input placeholder="Familiya">
             <template #prefix>
               <n-icon :component="Search12Regular"/>

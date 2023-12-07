@@ -89,3 +89,17 @@
 
 
 }
+// desktop version
+@media screen and (min-width:calc($mobile_device_screen_size - 0px)){
+  .desktop-none{
+    display: none !important;
+  }
+}
+
+// mobile version
+@media screen and (max-width:calc($mobile_device_screen_size - 0.5px)) {
+  .mobile-none{
+    display: none !important;
+  }
+
+}

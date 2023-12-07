@@ -210,6 +210,8 @@
 
   }
 
+
+
 }
 
 // mobile version
@@ -275,10 +277,15 @@
     width: calc(100% - 20px);
     margin:  0 10px;
   }
-
-  .mobile-none{
-    display: none !important;
+  .app-toolbar{
+    width: calc(100% - 0px) !important;
+    border-radius: 0 !important;
+    margin:  0 0 !important;
   }
+  .app-main{
+    padding-top: 0 !important;
+  }
+
 
 
 }

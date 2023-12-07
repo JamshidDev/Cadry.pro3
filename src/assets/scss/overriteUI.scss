@@ -98,6 +98,10 @@
 .n-pagination{
   .n-pagination-item--disabled.n-pagination-item--button{
     background-color: $app-bg-color !important;
+    border-color: $border-color !important;
+  }
+  .n-pagination-item--button{
+    border-color: $primary-color !important;
   }
 
   background-color: $app-bg-color !important;

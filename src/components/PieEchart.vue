@@ -1,7 +1,7 @@
 <template>
   <div style="height: 400px">
     <v-chart :option="option" autoresize   />
-    <button @click="count ++">Refrash</button>
+
   </div>
 </template>
 <script setup>

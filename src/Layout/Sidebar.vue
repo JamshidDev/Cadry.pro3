@@ -1,7 +1,9 @@
 <template>
   <div class="sidebar-box">
-    <div class="header-sidebar h-[60px]">
-
+    <div class="header-sidebar px-4 mb-2">
+      <div class="logo-box primary-border-color border-[1px] p-2 flex justify-center bg-[#ffffff0d]" style="border-radius: 6px">
+        <img class="w-[100px]" src="https://wpriverthemes.com/HTML/synck/assets/imgs/logo-white.svg" alt="">
+      </div>
     </div>
     <div class="body-sidebar">
       <template v-for="item in sidebar_menu_list">
@@ -23,7 +25,7 @@
             </div>
           </div>
           <div class="item-body" :style="`height:${panel_index===item.index? item.items.length*42 : 0}px`">
-            <div class="sub-item" v-for="sub_item in item.items" @click="select_sub_item(sub_item.index)"
+            <div class="sub-item" v-for="sub_item in item.items" @click="select_sub_item(sub_item.index, sub_item.to)"
                  :class="[sub_item.index === sidebar_index && 'active-item']">
               <div class="sub-item-icon">
                 <n-icon>
@@ -115,11 +117,29 @@ const panel_index = ref(null);
 const sidebar_menu_list = [
   {
     index: '1',
-    title: "Single Item 1",
+    title: "Global Ma'lumotlar",
     icon: 'pi pi-plus',
     to: 'admin-path',
     visible: true,
     is_New: false,
+    items: [
+      {
+        index: '1-1',
+        title: "Raqamli Dashboard",
+        icon: 'pi pi-plus',
+        to: 'template-page',
+        visible: true,
+        is_New: false,
+      },
+      {
+        index: '1-2',
+        title: "Grafik Dashboard",
+        icon: 'pi pi-plus',
+        to: 'graphic-dashboard',
+        visible: true,
+        is_New: false,
+      },
+    ]
   },
   {
     index: '2',
@@ -433,7 +453,8 @@ const select_single_item = (index) => {
 const select_panel = (index) => {
   panel_index.value = panel_index.value === index ? null : index;
 }
-const select_sub_item = (index) => {
+const select_sub_item = (index, route_name) => {
+  $Router.push({name:route_name})
   sidebar_index.value = index;
   save_local(index)
 }
@@ -451,6 +472,7 @@ onMounted(()=>{
       panel_index.value = list[0];
     }
   }
+
 })
 
 </script>
