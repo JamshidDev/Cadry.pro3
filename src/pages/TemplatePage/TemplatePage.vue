@@ -3,9 +3,7 @@
     <div class=" w-full " style="border-radius: 12px">
       <div class="grid grid-cols-1">
         <div class="grid xl:grid-cols-7 lg:grid-cols-7 md:grid-cols-5 sm:grid-cols-3 grid-cols-1 gap-4 mb-6 mt-4">
-          <div>
-            <p>{{ $t('title') }}</p>
-          </div>
+
           <n-input placeholder="Familiya">
             <template #prefix>
               <n-icon :component="Search12Regular"/>
@@ -94,20 +92,95 @@
               <td>Jahongir Raximov</td>
               <td>
                   <span class="flex justify-center items-center">
-                     <n-button type="primary" size="small">
+
+
+                      <n-dropdown
+                          placement="bottom-start"
+                          trigger="click"
+                          size="small"
+                          :options="options"
+                          @select="TableColumnChange"
+                      >
+               <n-button type="primary" size="small">
             <template #icon>
               <n-icon>
                 <MoreVertical20Filled/>
               </n-icon>
             </template>
           </n-button>
+            </n-dropdown>
+
                   </span>
               </td>
 
             </tr>
             </tbody>
           </n-table>
-          <Table-Pagination></Table-Pagination>
+          <div class="flex gap-2 items-center">
+            <Table-Pagination></Table-Pagination>
+            <n-button @click="tableColumnModal=true" type="primary" size="small">
+              <template #icon>
+                <n-icon>
+                  <FilterSync24Filled/>
+                </n-icon>
+              </template>
+            </n-button>
+            <n-modal v-model:show="tableColumnModal"  preset="card" title="Dialog" style="max-width: 800px; min-width: 360px;">
+              <template #header>
+              <div>Table setting title</div>
+            </template>
+
+
+                <n-checkbox-group v-model:value="showColumnList">
+                  <div class="grid gap-2 xl:grid-cols-3">
+                    <div>
+                      <n-checkbox value="Beijing" label="F.I.SH" />
+                    </div>
+                    <div>
+                      <n-checkbox value="Shanghai" label="Rasm" />
+                    </div>
+                    <div>
+                      <n-checkbox value="Guangzhou" label="Lavozim" />
+                    </div>
+                    <div>
+                      <n-checkbox value="Shenzen" label="Bo'lim" />
+                    </div>
+                    <div>
+                      <n-checkbox value="Shenzen" label="Korxona nomi" />
+                    </div><div>
+                    <n-checkbox value="Shenzen" label="Jinsi" />
+                  </div><div>
+                    <n-checkbox value="Shenzen" label="Millati" />
+                  </div>
+
+
+                  </div>
+                </n-checkbox-group>
+
+
+              <template #action>
+                <div class="grid grid-cols-2 gap-4">
+                  <n-button style="width: 100% !important;" >
+                    <template #icon>
+                      <n-icon>
+                        <ArrowHookUpLeft20Filled/>
+                      </n-icon>
+                    </template>
+                    Yopish
+                  </n-button>
+                  <n-button style="width: 100% !important;" type="primary">
+                    <template #icon>
+                      <n-icon>
+                        <SaveMultiple20Regular/>
+                      </n-icon>
+                    </template>
+                    Saqlash
+                  </n-button>
+                </div>
+              </template>
+            </n-modal>
+          </div>
+
         </div>
 
 
@@ -117,8 +190,59 @@
 
 </template>
 <script setup>
-import {h} from "vue"
+
 import {NIcon} from "naive-ui";
-import {Search12Regular, FilterSync24Filled,MoreVertical20Filled} from "@vicons/fluent";
+import {
+  SaveMultiple20Regular,
+  Search12Regular,
+  FilterSync24Filled,
+  MoreVertical20Filled,
+  Document24Regular,
+  ArrowDownload16Filled,
+  ArrowHookUpLeft20Filled,
+
+  Settings28Regular,
+} from "@vicons/fluent";
+import {h, ref} from "vue";
+
+const renderIcon = (icon) => {
+  return () => {
+    return h(NIcon, null, {
+      default: () => h(icon)
+    });
+  };
+};
+
+const options = [
+  {
+    label: "Ko'rish",
+    key: 'jay gatsby',
+    icon: renderIcon(Document24Regular)
+  },
+  {
+    label: 'Yuklash',
+    key: 'daisy buchanan',
+    icon: renderIcon(ArrowDownload16Filled)
+  },
+  {
+    type: 'divider',
+    key: 'd1'
+  },
+  {
+    label: "Tibbiy ko'rik",
+    key: 'jay gatsby',
+    icon: renderIcon(Settings28Regular)
+  },
+  {
+    label: "Ta'til",
+    key: 'daisy buchanan',
+    icon: renderIcon(Settings28Regular)
+  },
+];
+const tableColumnModal = ref(false);
+const showColumnList = ref(null);
+const TableColumnChange = (event)=>{
+  console.log(event)
+}
 
 </script>

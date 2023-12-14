@@ -25,7 +25,7 @@ const page = ref(1)
 const pageSize = ref(10)
 const pageSizes = [
   {
-    label: "10 per page",
+    label: "10 tadan ko'rsatish",
     value: 10
   },
   {
@@ -37,8 +37,12 @@ const pageSizes = [
     value: 30
   },
   {
-    label: "40 per page",
-    value: 40
+    label: "50 per page",
+    value: 50
+  },
+  {
+    label: "100 per page",
+    value: 100
   }
 ];
 

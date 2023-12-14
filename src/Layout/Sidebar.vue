@@ -3,13 +3,14 @@
     <div class="header-sidebar px-4 mb-2">
       <div class="logo-box primary-border-color border-[1px] p-2 flex justify-center bg-[#ffffff0d]" style="border-radius: 6px">
         <img class="w-[100px]" src="https://wpriverthemes.com/HTML/synck/assets/imgs/logo-white.svg" alt="">
+
       </div>
     </div>
     <div class="body-sidebar">
       <template v-for="item in sidebar_menu_list">
 
         <div v-if="item.items" class="multiple-item">
-          <div class="item-header" @click="select_panel(item.index)">
+          <div class="item-header" @click="select_panel(item.index)" :class="panel_index===item.index && 'open-items'">
             <div class="header-icon">
               <n-icon>
                 <ChartPerson24Regular></ChartPerson24Regular>
@@ -24,9 +25,9 @@
               </n-icon>
             </div>
           </div>
-          <div class="item-body" :style="`height:${panel_index===item.index? item.items.length*42 : 0}px`">
+          <div class="item-body"  :style="`height:${panel_index===item.index? item.items.length*42 : 0}px`">
             <div class="sub-item" v-for="sub_item in item.items" @click="select_sub_item(sub_item.index, sub_item.to)"
-                 :class="[sub_item.index === sidebar_index && 'active-item']">
+                 :class="[sub_item.index === sidebar_index && 'sub-active-item']">
               <div class="sub-item-icon">
                 <n-icon>
                   <ChartPerson24Regular></ChartPerson24Regular>

@@ -1,26 +1,133 @@
 .login-page-container{
   width: 100%;
   min-height: 100vh;
-  background: url("@/assets/pictures/railway.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;
-  &::before{
-    content: ' ';
-    width: 100%;
-    height: 100vh;
-    display: flex;
+  background: linear-gradient(90deg,#121c25 16.28%,#182836 50.69%,#121c25 86.98%);
+  //&::before{
+  //  content: ' ';
+  //  width: 100%;
+  //  height: 100vh;
+  //  display: flex;
+  //  position: absolute;
+  //  z-index: 2;
+  //  background-color: #0d124900;
+  //  backdrop-filter: blur(4px);
+  //
+  //}
+   .logo-box{
     position: absolute;
-    z-index: 2;
-    background-color: #0d124900;
-    backdrop-filter: blur(4px);
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    img{
+      width: 40px;
+    }
+    .logo-text{
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(to right, #4d4d4d 0, #1385fa 10%, #4d4d4d 20%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200%;
+      animation: shine 4s linear infinite;
+      background-position: 200% 250%;
+      .logo-title{
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+      }
+      .logo-subtitle{
+        font-size: 14px;
+        font-weight: 500;
+        text-align: center;
+      }
+    }
+  }
+  &> .login-form{
+    background-color: #40474d;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 2px 4px rgba(0,0,0,.08), 0 12px 24px rgba(0,0,0,.02);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
 
+    .input-field{
+      position: relative;
+      i{
+        position: absolute;
+        top: 38px;
+        right: 14px;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      input{
+        color: #ffffff !important;
+
+        &:focus{
+          outline: 2px solid #1385fa;
+        }
+
+        &:-webkit-autofill:focus {
+          -webkit-text-fill-color: #ffffff !important;
+          background-color: #FFF !important;
+
+        }
+        &:-webkit-autofill {
+          -webkit-text-fill-color: #ffffff !important;
+          transition: background-color 5000s ease-in-out 0s;
+        }
+
+      }
+      label{
+        color: #ffffff !important;
+      }
+
+      .error_input {
+        border: 2px solid #ee5253 !important;
+        &:focus{
+          outline: none !important;
+        }
+      }
+
+
+    }
+    .bg-overall{
+      position: absolute;
+      top: 0px;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      background: rgba(16, 32, 37, 0.29);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:hover{
+        cursor: none;
+      }
+    }
   }
 
-  &> .login-form{
-    background-color:#ffffff70;
-    backdrop-filter: blur(12px);
+  &> .footer-section{
+    //background: rgba(242, 244, 250, 0.11);
+    //backdrop-filter: blur(6px);
+    backdrop-filter: blur(4px);
+    background: rgb(237 246 255 / 8%);
+  }
+
+}
+@keyframes shine {
+  50% {
+    background-position: right;
+  }
+
+  100% {
+    background-position: left;
   }
 }

@@ -22,11 +22,12 @@ $sidebar-bg-color: linear-gradient(45deg, #1e293b 23%, #1e293b 100%);
 $sidebar-max-width:240px;
 $sidebar-min-width:60px;
 $sidebar-text-color:#ffffff;
-$sidebar-text-hover-color: #ffffff0d;
-$sidebar-icon-size:20px;
+$sidebar-text-hover-color: rgba(29, 97, 226, 0.65);
+$sidebar-icon-size:15px;
 $sidebar-arrow-icon-size:18px;
 $sidebar-text-size:12px;
 $sidebar-animation:all 0.225s ease-in-out;
+$item-border-radius:8px;
 
 
 $mobile_device_screen_size:920px;
