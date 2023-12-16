@@ -21,20 +21,39 @@
           <Eye24Regular  @click="change_inputType"  v-else></Eye24Regular>
         </n-icon>
       </div>
-      <button @click="authUser" class="h-[36px] rounded-[4px] bg-[#1385fa] text-[14px] text-[#fff] w-full mt-6">Tizimga kirish</button>
+      <button @click="authUser" class="h-[36px] rounded-[4px] bg-[#1385fa] active:bg-[#138fa] text-[14px] text-[#fff] w-full mt-6">Tizimga kirish</button>
+
+<!--      <div class="text-[13px] mt-[60px] text-[#8e9ba8] font-normal" >Savol va takliflar uchun yopiq <span class="text-[#1385fa] cursor-pointer">telegram guruh</span></div>-->
+     <div class="flex gap-4 pt-6">
+       <button class="w-[36px] h-[36px] rounded bg-[#70757a] hover:bg-[#1385fa] transition-all duration-200 flex justify-center items-center">
+         <n-icon class="text-[24px] text-[#fff]">
+           <PersonCall16Filled></PersonCall16Filled>
+         </n-icon>
+       </button>
+       <button class="w-[36px] h-[36px] rounded bg-[#70757a] hover:bg-[#1385fa] transition-all duration-200 flex justify-center items-center">
+         <n-icon class="text-[24px] text-[#fff]">
+           <Call16Filled></Call16Filled>
+         </n-icon>
+       </button>
+       <button class="w-[36px] h-[36px] rounded bg-[#70757a] hover:bg-[#1385fa] transition-all duration-200 flex justify-center items-center">
+         <n-icon class="text-[24px] text-[#fff]">
+           <Send28Filled></Send28Filled>
+         </n-icon>
+       </button>
+     </div>
       <div class="bg-overall" v-if="loading">
         <n-spin size="medium" />
       </div>
-      <div class="text-[13px] mt-[60px] text-[#8e9ba8] font-normal" >Savol va takliflar uchun yopiq <span class="text-[#1385fa] cursor-pointer">telegram guruh</span></div>
     </div>
 
-    <div class="footer-section w-full absolute bottom-0 left-0 right-0 h-[40px] flex items-center justify-center">
-            <span class="text-[#8e9ba8] text-[13px]">"O'zbekiston temir yo'llari" Aksiyadorlik jamiyatining Exodim platformasi</span>
+    <div class="footer-section w-full absolute bottom-0 left-0 right-0 h-[50px] flex items-center justify-center">
+            <span class="text-[#8e9ba8] text-[13px] px-4 text-center">"O'zbekiston temir yo'llari" Aksiyadorlik jamiyatining Exodim platformasi</span>
+
     </div>
   </div>
 </template>
 <script setup>
-import {Eye24Regular,EyeOff24Filled} from "@vicons/fluent"
+import {Eye24Regular,EyeOff24Filled, PersonCall16Filled, Call16Filled, Send28Filled} from "@vicons/fluent"
 import {ref, computed} from 'vue'
 const  inputType = ref('password')
 const loading = ref(false)

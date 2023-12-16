@@ -144,7 +144,7 @@ const sidebar_menu_list = [
   },
   {
     index: '2',
-    title: "Multiple Item 2",
+    title: "Kadr vazifalari",
     icon: 'pi pi-plus',
     to: 'admin-path',
     visible: true,
@@ -152,7 +152,7 @@ const sidebar_menu_list = [
     items: [
       {
         index: '2-1',
-        title: "Sub Item 1",
+        title: "Xodimlar ro'yhati",
         icon: 'pi pi-plus',
         to: 'admin-path',
         visible: true,
@@ -160,7 +160,7 @@ const sidebar_menu_list = [
       },
       {
         index: '2-2',
-        title: "Sub Item 2",
+        title: "Ta'tildagi xodimlar",
         icon: 'pi pi-plus',
         to: 'admin-path',
         visible: true,
@@ -168,12 +168,98 @@ const sidebar_menu_list = [
       },
       {
         index: '2-3',
-        title: "Sub Item 3",
+        title: "Tibbiy ko'rik",
+        icon: 'pi pi-plus',
+        to: 'admin-path',
+        visible: true,
+        is_New: false,
+      }
+      ,{
+        index: '2-4',
+        title: "Jazolangan xodimlar",
         icon: 'pi pi-plus',
         to: 'admin-path',
         visible: true,
         is_New: false,
       },
+      {
+        index: '2-5',
+        title: "Mukofatlangan xodimlar",
+        icon: 'pi pi-plus',
+        to: 'admin-path',
+        visible: true,
+        is_New: false,
+      },
+      {
+        index: '2-6',
+        title: "Shtat jadvali",
+        icon: 'pi pi-plus',
+        to: 'admin-path',
+        visible: true,
+        is_New: false,
+      },
+      {
+        index: '2-7',
+        title: "Tabel jadvali",
+        icon: 'pi pi-plus',
+        to: 'admin-path',
+        visible: true,
+        is_New: false,
+      },
+      {
+        index: '2-8',
+        title: "Turniket ma'lumotlari",
+        icon: 'pi pi-plus',
+        to: 'admin-path',
+        visible: true,
+        is_New: false,
+      },
+      {
+        index: '2-9',
+        title: "Bo'limlar",
+        icon: 'pi pi-plus',
+        to: 'admin-path',
+        visible: true,
+        is_New: false,
+      },
+      {
+        index: '2-10',
+        title: "Attestatsiya",
+        icon: 'pi pi-plus',
+        to: 'admin-path',
+        visible: true,
+        is_New: false,
+      },
+      {
+        index: '2-11',
+        title: "Arxivdan chiqarish",
+        icon: 'pi pi-plus',
+        to: 'admin-path',
+        visible: true,
+        is_New: false,
+      },
+      {
+        index: '2-12',
+        title: "Arxivdagi xodimlar",
+        icon: 'pi pi-plus',
+        to: 'admin-path',
+        visible: true,
+        is_New: false,
+      }, {
+        index: '2-12',
+        title: "Malaka oshirish",
+        icon: 'pi pi-plus',
+        to: 'admin-path',
+        visible: true,
+        is_New: false,
+      },
+
+
+
+
+
+
+
     ]
   },
   {
