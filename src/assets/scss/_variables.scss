@@ -7,27 +7,49 @@
   --text-dark:#0f1018;
   --text-grey:#7d828f;
 
-  --primary-color:#805dca;
+  --primary-color: #2196f3;
   --white-color:#ffffff;
   --info-color:#2196f3;
   --danger-color:#ff0000;
   --success-color:#25d366;
   --warning-color:#ff9900;
+
+  --error-color:#ff0000;
+
+
+  --sidebar-bg-color:#ffffff;
+  --sidebar-hover-item:#229CFF1C;
+  --sidebar-active-text:#2196f3;
+  --sidebar-border:#E2E8F0FF;
+  --sidebar-header:#f4f6f5;
+  --panel-shadow:rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+
 }
 
 $app-toolbar-bg-color: var(--card-bg-color);
 $app-bg-color: var(--ap-bg-color);
 
-$sidebar-bg-color: linear-gradient(45deg, #1e293b 23%, #1e293b 100%);
+$sidebar-bg-color: var(--sidebar-bg-color);
+$sidebar-text-color: var(--text-dark);
+$sidebar-text-hover-color: var(--sidebar-hover-item);
+$sidebar_active_sub_item: var( --primary-color);
+$sidebar-container_border-color:var(--sidebar-border);
+$sidebar-header-bg:var(--sidebar-header);
+$panel_shadow:var(--panel-shadow);
+$sidebar_btn:var( --primary-color);
 $sidebar-max-width:240px;
 $sidebar-min-width:60px;
-$sidebar-text-color:#ffffff;
-$sidebar-text-hover-color: rgba(29, 97, 226, 0.65);
-$sidebar-icon-size:15px;
+$sidebar-icon-size:18px;
 $sidebar-arrow-icon-size:18px;
 $sidebar-text-size:12px;
 $sidebar-animation:all 0.225s ease-in-out;
 $item-border-radius:8px;
+$sidebar_sub_item_effect: #37393b;
+//$sidebar_active_item:rgba(196, 223, 253, 0.65);
+
+
+
 
 
 $mobile_device_screen_size:920px;
@@ -44,13 +66,14 @@ $btn-border-color:rgb(243, 244, 246);
 //color list
 
 $primary-color:var(--primary-color);
-$primary-bg-color:linear-gradient(72.47deg, rgb(115, 103, 240) 22.16%, rgba(115, 103, 240, 0.7) 76.47%);
+$primary-bg-color:linear-gradient(72.47deg, rgb(30, 134, 239) 22.16%, rgba(3, 98, 252, 0.7) 76.47%);
 
 $white-color: var(--white-color);
 $info-color:var(--info-color);
 $danger-color:var(--danger-color);
 $success-color:var(--success-color);
 $warning-color:var(--warning-color);
+$error-color:var(--error-color);
 
 //text
 $text-dark-color: var(--text-dark);

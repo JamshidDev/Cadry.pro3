@@ -112,13 +112,15 @@
       color: $text-dark-color !important;
     }
   }
+  .n-base-selection__border{
+    border-color: $border-color !important;
+  }
   .n-pagination-item--active{
     border-color: $primary-color !important;
     color: $white-color !important;
     background-color: $primary-color !important;
   }
   .n-virtual-list{
-
     .n-base-select-option__content{
       color: $text-dark-color !important;
     }
@@ -224,6 +226,7 @@
   }
   .n-input__input-el{
     color: $text-dark-color !important;
+    caret-color: $primary-color !important ;
     &::placeholder{
       color: $text-gray-color !important;
     }
@@ -244,12 +247,125 @@
     }
   }
 }
+
+.n-input--error-status{
+  .n-input__border, .n-input__state-border{
+    border:1px solid $error-color !important;
+  }
+}
 .n-input--focus{
   outline: 1px solid $primary-color !important;
-  .n-input__state-border{
+  .n-input__state-border, .n-input__border{
     border:1px solid $primary-color !important;
     //background-color: $card-bg-color !important;
   }
 }
 
 
+.n-drawer{
+  background: $card-bg-color !important;
+  border-color: $border-color !important;
+  .n-drawer-header, .n-drawer-footer{
+    border-color: $border-color !important;
+  }
+  .n-input{
+    background-color: $app-bg-color !important;
+  }
+  .n-checkbox{
+    .n-checkbox__label{
+      color: $text-gray-color !important;
+    }
+    .n-checkbox-box{
+      background-color: $app-bg-color !important;
+      .n-checkbox-box__border{
+        border-color: $border-color !important;
+      }
+
+    }
+  }
+  .n-checkbox--checked {
+    .n-checkbox-box{
+      background-color: $primary-color !important;
+    }
+  }
+
+  .n-base-selection{
+    .n-base-selection-label{
+      background-color: $app-bg-color !important;
+      .n-base-selection-input{
+        color: $text-gray-color !important;
+      }
+    }
+    .n-base-selection-overlay__wrapper{
+      color: $text-gray-color !important;
+    }
+    .n-base-selection__border, .n-base-selection__state-border{
+      border:1px solid $border-color !important;
+    }
+  }
+
+  .n-base-selection--error-status{
+    .n-base-selection__border, .n-base-selection__state-border{
+      border:1px solid $error-color !important;
+    }
+  }
+  .n-base-selection--focus {
+    .n-base-selection__border, .n-base-selection__state-border{
+      border:2px solid $primary-color !important;
+    }
+  }
+}
+
+.n-form{
+  .n-form-item-label{
+    .n-form-item-label__text{
+      color: $text-gray-color !important;
+    }
+    .n-form-item-label__asterisk{
+      color:$danger-color !important;
+    }
+
+
+
+  }
+  .n-form-item-feedback--error{
+    color: $error-color !important;
+  }
+}
+
+.v-binder-follower-content{
+  .n-base-select-menu{
+    background: $card-bg-color !important;
+    .v-vl-items{
+      background: $card-bg-color !important;
+      .n-base-select-option{
+        background: $card-bg-color !important;
+        box-shadow: $panel_shadow !important ;
+        &:hover{
+          background: $card-hover-bg-color !important;
+        }
+        &::before{
+          background: transparent !important;
+          &:hover{
+            background: $card-hover-bg-color !important;
+          }
+
+        }
+        .n-base-select-option__content{
+          color: $text-gray-color !important;
+          .n-base-select-option__check{
+            color: $primary-color !important ;
+          }
+        }
+      }
+    }
+  }
+
+  .n-popover{
+    box-shadow: $panel-shadow !important ;
+
+    .n-popconfirm__body{
+      color: $text-gray-color !important ;
+    }
+  }
+}

@@ -18,8 +18,6 @@
           <component :is="Component" />
         </transition>
       </router-view>
-
-
     </div>
     <div class="sidebar-overall-bg" @click="control_sidebar()">
     </div>

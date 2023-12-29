@@ -7,14 +7,36 @@ const theme_details = {
         border_color: '#E2E8F0FF',
         text_dark: '#0f1018',
         text_gray: '#7d828f',
+        sidebar_bg_color:'#ffffff',
+        sidebar_border:'#E2E8F0FF',
+        sidebar_header:'#f4f6f5',
+        primary_color: '#2196f3',
+
     },
+    // dark: {
+    //     app_bg_color: '#0f172a',
+    //     card_bg_color: '#1e293b',
+    //     hover_card_bg_color: '#ffffff0d',
+    //     border_color: '#F1F5F91E',
+    //     text_dark: '#ffffff',
+    //     text_gray: '#94A3B8FF',
+    //
+    //     sidebar_bg_color:'#1e293b',
+    //     sidebar_border:'#F1F5F91E',
+    //     sidebar_header:'#0f172a',
+    // }
     dark: {
-        app_bg_color: '#0f172a',
-        card_bg_color: '#1e293b',
+        app_bg_color: '#2b2b30',
+        card_bg_color: '#202025',
         hover_card_bg_color: '#ffffff0d',
-        border_color: '#F1F5F91E',
+        border_color: '#ffffff1a',
         text_dark: '#ffffff',
         text_gray: '#94A3B8FF',
+
+        sidebar_bg_color:'#202025',
+        sidebar_border:'#ffffff1a',
+        sidebar_header:'#202025',
+        primary_color: '#008000',
     }
 
 }
@@ -48,6 +70,11 @@ export const Mixins = {
             document.documentElement.style.setProperty('--border-color', theme_details['dark'].border_color);
             document.documentElement.style.setProperty('--text-dark', theme_details['dark'].text_dark);
             document.documentElement.style.setProperty('--text-grey', theme_details['dark'].text_gray);
+
+            document.documentElement.style.setProperty('--sidebar-bg-color', theme_details['dark'].sidebar_bg_color);
+            document.documentElement.style.setProperty('--sidebar-border', theme_details['dark'].sidebar_border);
+            document.documentElement.style.setProperty('--sidebar-header', theme_details['dark'].sidebar_header);
+            document.documentElement.style.setProperty('--primary-color', theme_details['dark'].primary_color);
         } else {
             console.log("light theme")
             document.documentElement.style.setProperty('--ap-bg-color', theme_details['light'].app_bg_color);
@@ -56,6 +83,11 @@ export const Mixins = {
             document.documentElement.style.setProperty('--border-color', theme_details['light'].border_color);
             document.documentElement.style.setProperty('--text-dark', theme_details['light'].text_dark);
             document.documentElement.style.setProperty('--text-grey', theme_details['light'].text_gray);
+
+            document.documentElement.style.setProperty('--sidebar-bg-color', theme_details['light'].sidebar_bg_color);
+            document.documentElement.style.setProperty('--sidebar-border', theme_details['light'].sidebar_border);
+            document.documentElement.style.setProperty('--sidebar-header', theme_details['light'].sidebar_header);
+            document.documentElement.style.setProperty('--primary-color', theme_details['light'].primary_color);
         }
 
     },

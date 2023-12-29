@@ -7,15 +7,15 @@
 <!--                <div class="logo-subtitle">AKSIYADORLIK JAMIYATI</div>-->
 <!--              </div>-->
 <!--            </div>-->
-    <div class="login-form mx-auto mt-[160px]  max-w-[400px] min-w-[300px] w-full pb-4 h-auto   relative z-[3] rounded-[20px] px-[20px] pt-[30px]">
+    <form class="login-form mx-auto mt-[160px]  max-w-[400px] min-w-[300px] w-full pb-4 h-auto   relative z-[3] rounded-[20px] px-[20px] pt-[30px]">
       <h4 class="text-center text-[24px] text-[#fff] font-medium uppercase" >Tizimga kirish</h4>
       <div class="input-field mb-6 mt-6">
         <label class="block text-[13px] mb-2 " for="login">Telefon raqam</label>
-        <input  type="text" v-model="user_details.login" :class="( loginError && submitted) && 'error_input'"  id="login" name="login" placeholder="Telefon raqamingizni kiriting" class="block text-[14px]  px-[12px] w-full bg-[#353c43] h-[40px] rounded-[4px]">
+        <input  type="text" v-model="user_details.phone" :class="( loginError && submitted) && 'error_input'"  id="login" name="login" placeholder="Telefon raqamingizni kiriting" class="block text-[14px]  px-[12px] w-full bg-[#353c43] h-[40px] rounded-[4px]">
       </div>
       <div class="input-field">
         <label class="block text-[13px] mb-2" for="password">Parol</label>
-        <input  :type="inputType" v-model="user_details.password" :class="(passwordError && submitted) && 'error_input'"  id="password" name="password" placeholder="Parolni kiriting" class="block text-[14px]  px-[12px] w-full bg-[#353c43] h-[40px] rounded-[4px]">
+        <input autocomplete="on"  :type="inputType" v-model="user_details.password" :class="(passwordError && submitted) && 'error_input'"  id="password" name="password" placeholder="Parolni kiriting" class="block text-[14px]  px-[12px] w-full bg-[#353c43] h-[40px] rounded-[4px]">
         <n-icon>
           <EyeOff24Filled @click="change_inputType" v-if="inputType == 'password'"></EyeOff24Filled>
           <Eye24Regular  @click="change_inputType"  v-else></Eye24Regular>
@@ -44,7 +44,7 @@
       <div class="bg-overall" v-if="loading">
         <n-spin size="medium" />
       </div>
-    </div>
+    </form>
 
     <div class="footer-section w-full absolute bottom-0 left-0 right-0 h-[50px] flex items-center justify-center">
             <span class="text-[#8e9ba8] text-[13px] px-4 text-center">"O'zbekiston temir yo'llari" Aksiyadorlik jamiyatining Exodim platformasi</span>
@@ -53,13 +53,15 @@
   </div>
 </template>
 <script setup>
+
+
 import {Eye24Regular,EyeOff24Filled, PersonCall16Filled, Call16Filled, Send28Filled} from "@vicons/fluent"
 import {ref, computed} from 'vue'
 const  inputType = ref('password')
 const loading = ref(false)
 const submitted = ref(false)
 const change_inputType = ()=>{
-  if(inputType.value == 'password'){
+  if(inputType.value === 'password'){
     inputType.value = 'text'
   }else{
     inputType.value = 'password'
@@ -67,24 +69,28 @@ const change_inputType = ()=>{
 }
 
 const user_details = ref({
-  login:null,
+  phone:null,
   password:null,
 })
 
-const authUser = ()=>{
-
+const authUser = (e)=>{
+  e.preventDefault()
   submitted.value = true
   if(!loginError.value && !passwordError.value ){
     loading.value = true;
-    setTimeout(()=>{
+    $ApiService.auth.loginUser({data:user_details.value}).then((res)=>{
+      localStorage.setItem('access_token', res.data.access_token);
+      localStorage.setItem('menu_list_store', JSON.stringify(res.data.user.menus));
+      $Router.push('/')
+    }).finally(()=>{
       loading.value = false;
-    }, 3000)
+    })
   }
 
 }
 
 const loginError = computed(()=>{
-  return !user_details.value.login;
+  return !user_details.value.phone;
 })
 
 const passwordError = computed(()=>{

@@ -1,5 +1,5 @@
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
@@ -10,4 +10,87 @@ html{
 .fade-enter, .fade-leave-active {
   opacity: 0
 }
+
+
+//.enakt-card {
+//  width: 400px;
+//  background-color: white;
+//  display: flex;
+//  flex-direction: column;
+//  position: relative;
+//  top: 0px;
+//  transition: all .225s linear;
+//  cursor: pointer;
+//  border: 1px solid #E2E8F0FF;
+//  border-radius: 8px;
+//  padding-top: 20px;
+//  box-shadow: none;
+//
+//  &:hover {
+//    top: -20px;
+//    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+//
+//  }
+//
+//  & > .status-text {
+//    text-align: center;
+//    background-color: #FF9900FF;
+//    width: auto;
+//    font-size: 16px;
+//    font-weight: 600;
+//    color: white;
+//    margin: 0 auto;
+//    padding: 4px 12px;
+//    border-radius: 4px;
+//    margin-bottom: 20px;
+//    box-shadow: 0 10px 20px -10px #FF9900FF  ;
+//
+//  }
+//
+//
+//  &> .text-box{
+//    width: 100%;
+//    padding: 5px 30px;
+//    display: flex;
+//    justify-content: space-between;
+//
+//    &>span:first-child{
+//      font-weight: 500;
+//    }
+//    &>span:last-child{
+//      font-size: 14px;
+//
+//    }
+//
+//  }
+//  &> .person_fullname{
+//    margin: 5px 30px;
+//    width: calc(100% - 60px);
+//    border-bottom: 1px dashed #E2E8F0FF;
+//  }
+//
+//  &>.card-footer{
+//    width: 100%;
+//    border-top: 1px solid #E2E8F0FF;
+//    margin-top: 20px;
+//    padding: 10px 0px;
+//    display: flex;
+//    flex-direction: column;
+//    &> .card_number{
+//      width: 100%;
+//      text-align: center;
+//      font-weight: bold;
+//      font-size: 20px;
+//
+//    }
+//    &> .text-box{
+//      width: 100%;
+//      padding: 5px 30px;
+//      display: flex;
+//      justify-content: space-between;
+//    }
+//  }
+//}
+
+//
 

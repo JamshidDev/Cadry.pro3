@@ -57,16 +57,7 @@
               fallback-src="https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg"
           />
         </n-badge>
-
       </n-dropdown>
-      <!--    <n-switch v-model:value="active" size="large">-->
-      <!--      <template #checked-icon>-->
-      <!--        <n-icon :component="WeatherMoon20Regular" />-->
-      <!--      </template>-->
-      <!--      <template #unchecked-icon>-->
-      <!--        <n-icon color="#" :component="WeatherSunny20Filled" />-->
-      <!--      </template>-->
-      <!--    </n-switch>-->
     </div>
 
 <!--    search bar-->
@@ -149,6 +140,11 @@ const options = [{
 ]
 const handleSelect = (event) => {
   console.log(event)
+  if(event == 'logout'){
+    localStorage.removeItem('access_token')
+    localStorage.removeItem('menu_list_store')
+    $Router.push('/login')
+  }
 }
 
 const handleSearch = (event) => {

@@ -6,6 +6,8 @@ import router from "@/router/router.js";
 import naive from 'naive-ui'
 import VueApexCharts from "vue3-apexcharts";
 import TablePagination from "@/components/TablePagination.vue";
+import NoDataPicture from "@/components/NoDataPicture.vue";
+import ApiService from "@/service/ApiService.js";
 import { createI18n } from 'vue-i18n'
 import {
     defaultLocale,
@@ -24,18 +26,18 @@ const i18n = createI18n({
 })
 
 
-setTimeout(()=>{
-    i18n.global.setLocaleMessage(
-        'en', {
-            'message': {
-                'hello': 'Hello world'
-            },
-            'title':"Salom en",
-
-        },
-    )
-
-}, 3000)
+// setTimeout(()=>{
+//     i18n.global.setLocaleMessage(
+//         'en', {
+//             'message': {
+//                 'hello': 'Hello world'
+//             },
+//             'title':"Salom en",
+//
+//         },
+//     )
+//
+// }, 3000)
 
 
 const app = createApp(App)
@@ -48,9 +50,10 @@ app.use(naive)
 app.use(router)
 app.use(i18n)
 app.use(VueApexCharts)
-console.log(app.config.globalProperties.$i18n)
 app.component('Table-Pagination', TablePagination)
+app.component('No-Data-Picture', NoDataPicture)
 window.$Router = app.config.globalProperties.$router;
 window.$Route = app.config.globalProperties.$route;
+window.$ApiService = ApiService;
 app.mount('#app')
 
