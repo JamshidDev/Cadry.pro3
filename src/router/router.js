@@ -17,6 +17,7 @@ import AcademicDegreePage from "@/pages/Structure/AcademicDegree/AcademicDegreeP
 import AcademicTitlePage from "@/pages/Structure/AcademicTitle/AcademicTitlePage.vue";
 import MenuPage from "@/pages/UserMenu/Menu/MenuPage.vue";
 import RolePage from "@/pages/UserMenu/Role/RolePage.vue";
+import TableTemplate from "@/pages/TemplatePage/TableTemplate.vue";
 
 const checkToken = () => {
     const token_date = localStorage.getItem("token_created_date");
@@ -28,6 +29,7 @@ const checkToken = () => {
     } else {
         return true;
     }
+
 };
 
 const beforeLogin = (to, from, next) => {
@@ -41,6 +43,7 @@ const beforeLogin = (to, from, next) => {
         localStorage.removeItem("token_created_date");
         next("login");
     }
+
 };
 
 const authLogin = (to, from, next) => {

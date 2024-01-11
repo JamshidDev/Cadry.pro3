@@ -13,31 +13,32 @@ const theme_details = {
         primary_color: '#2196f3',
 
     },
-    // dark: {
-    //     app_bg_color: '#0f172a',
-    //     card_bg_color: '#1e293b',
-    //     hover_card_bg_color: '#ffffff0d',
-    //     border_color: '#F1F5F91E',
-    //     text_dark: '#ffffff',
-    //     text_gray: '#94A3B8FF',
-    //
-    //     sidebar_bg_color:'#1e293b',
-    //     sidebar_border:'#F1F5F91E',
-    //     sidebar_header:'#0f172a',
-    // }
     dark: {
-        app_bg_color: '#2b2b30',
-        card_bg_color: '#202025',
+        app_bg_color: '#0f172a',
+        card_bg_color: '#1e293b',
         hover_card_bg_color: '#ffffff0d',
-        border_color: '#ffffff1a',
+        border_color: '#F1F5F91E',
         text_dark: '#ffffff',
         text_gray: '#94A3B8FF',
 
-        sidebar_bg_color:'#202025',
-        sidebar_border:'#ffffff1a',
-        sidebar_header:'#202025',
-        primary_color: '#008000',
+        sidebar_bg_color:'#1e293b',
+        sidebar_border:'#F1F5F91E',
+        sidebar_header:'#0f172a',
+        primary_color: '#2196f3',
     }
+    // dark: {
+    //     app_bg_color: '#2b2b30',
+    //     card_bg_color: '#202025',
+    //     hover_card_bg_color: '#ffffff0d',
+    //     border_color: '#ffffff1a',
+    //     text_dark: '#ffffff',
+    //     text_gray: '#94A3B8FF',
+    //
+    //     sidebar_bg_color:'#202025',
+    //     sidebar_border:'#ffffff1a',
+    //     sidebar_header:'#202025',
+    //     primary_color: '#008000',
+    // }
 
 }
 

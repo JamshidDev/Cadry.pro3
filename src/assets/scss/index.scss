@@ -3,13 +3,19 @@
 * {
   font-family: 'Poppins', sans-serif !important;
 
+  font-style: normal !important;
+  font-weight: 500;
+
 }
 @import "_variables";
 @import "sidebar";
 @import "login";
+
 @import "layout";
 @import "appBar";
 @import "general";
 @import "appConfig";
+
 @import "overriteUI";
+@import "table";
 @import "overrite";

@@ -20,58 +20,69 @@
           </n-button>
         </div>
         <n-spin :show="loading" style="min-height: 200px">
-          <div class="w-full overflow-x-auto" v-if="table_list.length>0 && !loading">
-            <n-table :bordered="false" :single-line="false" size="small" striped>
-              <thead>
-              <tr>
-                <th class="text-dark-color" style="min-width: 40px; width:40px">No</th>
-                <th class="text-dark-color" style="min-width: 120px; width:300px">Nomi</th>
-                <th class="text-dark-color" style="min-width: 60px; width:80px">Qisqa kodi</th>
-                <th class="text-dark-color" style="min-width: 120px;">Davlat</th>
-                <th class="text-dark-color" style="min-width: 60px; width:80px">Qisqa kodi</th>
-                <th class="text-dark-color" style="min-width: 60px; width: 60px">Amallar</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr v-for="(item, index) in table_list" :key="item.id">
-                <td>
-                  <span class="flex justify-center items-center" style="font-size: 12px"> {{(params.page - 1)*params.per_page + index+1}}</span>
-                </td>
-                <td>
-                  <span class="text-dark-color">
-                    {{ item.name }}
-                  </span>
-                </td>
-                <td>
-                  <span class="text-dark-color w-full flex justify-center">
+          <div class="w-full overflow-x-auto" v-if="table_list.length>0">
+            <TableTemplate>
+              <template v-slot:header>
+                <div class="table_tr">
+                  <div class="table_td" style="min-width: 40px; width:40px;">
+                    <span class="w-full flex text-grey-color text-sm text-center">No</span>
+                  </div>
+                  <div class="table_td px-2" style="width:clamp(120px, 100%, 400px);">
+                    <span class="w-full flex text-grey-color text-sm text-center">Viloyat nomi</span>
+                  </div>
+                  <div class="table_td px-2" style="width:clamp(120px, 100%, 200px);">
+                    <span class="w-full flex justify-center text-grey-color text-sm">Qisqa kodi</span>
+                  </div>
+                  <div class="table_td px-2" style="width:clamp(80px, 100%, 100%);">
+                    <span class="w-full flex justify-center text-grey-color text-sm">Davlat nomi</span>
+                  </div>
+                  <div class="table_td px-2" style="width:clamp(120px, 100%, 200px);">
+                    <span class="w-full flex text-grey-color text-sm justify-center">Qisqa kodi</span>
+                  </div>
+                  <div class="table_td px-2" style="width:clamp(40px, 100%, 60px);">
+                    <span class="w-full flex text-grey-color text-sm text-center">Amallar</span>
+                  </div>
+                </div>
+              </template>
 
-                    <n-tag type="info" :bordered="false" size="small">
+              <template v-slot:body>
+
+                <div class="table_tr" v-for="(item, index) in table_list" :key="item.id">
+                  <div class="table_td" style="min-width: 40px; width:40px;">
+                    <span class="w-full flex text-sm text-dark-color  text-center">{{(params.page - 1)*params.per_page + index+1}}</span>
+                  </div>
+                  <div class="table_td px-2" style="width:clamp(120px, 100%, 400px);">
+                    <span class="w-full flex text-sm text-dark-color  text-center">{{ item.name }}</span>
+                  </div>
+                  <div class="table_td px-2" style="width:clamp(120px, 100%, 200px);">
+                    <span class="w-full flex justify-center text-sm text-dark-color">
+                      <n-tag type="info" :bordered="false" round size="small">
                         {{ item.short_code }}
                     </n-tag>
-                  </span>
-                </td>
-                <td>
-                <span class="text-dark-color">
-                    {{ item.country.name }}
-                  </span>
-                </td>
-                <td>
-                  <span class="text-dark-color w-full flex justify-center">
-
-                    <n-tag type="success" size="small" :bordered="false" class="text-sm">
+                    </span>
+                  </div>
+                  <div class="table_td px-2" style="width:clamp(100px, 100%, 100%);">
+                    <span class="w-full flex justify-center text-sm text-dark-color">{{ item.country.name }}</span>
+                  </div>
+                  <div class="table_td px-2" style="width:clamp(120px, 100%, 200px);">
+                       <span class="w-full flex justify-center">
+                         <n-tag type="success" size="small" :bordered="false" class="text-sm">
                         {{ item.country.short_code }}
                     </n-tag>
-                  </span>
-                </td>
-                <td>
-                  <span class="flex justify-center items-center">
-                    <action-button :options="options" :action_data="item"
-                                   @action-event="actionHandler($event)"></action-button>
-                  </span>
-                </td>
-              </tr>
-              </tbody>
-            </n-table>
+                       </span>
+
+
+                  </div>
+                  <div class="table_td px-2" style="width:clamp(40px, 100%, 60px);">
+            <span class="w-full flex text-sm text-dark-color">
+              <action-button :options="options" :action_data="item"
+                             @action-event="actionHandler($event)"></action-button>
+            </span>
+                  </div>
+                </div>
+
+              </template>
+            </TableTemplate>
             <div class="flex items-center">
               <Table-Pagination :page="params.page" :per_page="params.per_page" :total="total_item"
                                 @change-page="change_pagination($event)"></Table-Pagination>
@@ -81,6 +92,10 @@
             <no-data-picture></no-data-picture>
           </div>
         </n-spin>
+
+
+
+
         <n-drawer v-model:show="dialog" :width="400">
           <n-drawer-content>
             <template #header>
@@ -134,6 +149,7 @@ import {
 import {h, onMounted} from "vue";
 import {NIcon} from "naive-ui";
 import NoDataPicture from "@/components/NoDataPicture.vue";
+import TableTemplate from "@/pages/TemplatePage/TableTemplate.vue";
 
 const loading = ref(false);
 const table_list = ref([]);

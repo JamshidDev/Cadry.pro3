@@ -7,6 +7,7 @@ import naive from 'naive-ui'
 import VueApexCharts from "vue3-apexcharts";
 import TablePagination from "@/components/TablePagination.vue";
 import NoDataPicture from "@/components/NoDataPicture.vue";
+import SeperateTable from "@/components/Table/SeperateTable.vue";
 import ApiService from "@/service/ApiService.js";
 import { createI18n } from 'vue-i18n'
 import {
@@ -52,6 +53,7 @@ app.use(i18n)
 app.use(VueApexCharts)
 app.component('Table-Pagination', TablePagination)
 app.component('No-Data-Picture', NoDataPicture)
+app.component('Separate-Table', SeperateTable)
 window.$Router = app.config.globalProperties.$router;
 window.$Route = app.config.globalProperties.$route;
 window.$ApiService = ApiService;
